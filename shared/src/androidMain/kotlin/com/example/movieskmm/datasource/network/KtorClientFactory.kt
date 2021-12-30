@@ -5,6 +5,7 @@ import io.ktor.client.engine.android.*
 import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
 import io.ktor.client.features.logging.*
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 
 actual class KtorClientFactory {
@@ -20,6 +21,8 @@ actual class KtorClientFactory {
             install(JsonFeature) {
                 serializer = KotlinxSerializer(
                     kotlinx.serialization.json.Json {
+                        explicitNulls = false
+                        coerceInputValues = true
                         ignoreUnknownKeys = true // if the server sends extra fields, ignore them
                     }
                 )
