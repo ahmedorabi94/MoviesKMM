@@ -64,6 +64,6 @@ dependencies {
 
     implementation(Kotlinx.datetime)
     implementation(Ktor.android)
-
+    implementation(Ktor.android_Loggin)
     implementation(Google.material)
 }

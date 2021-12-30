@@ -1,27 +1,26 @@
-package com.example.movieskmm.interactors.movielist
+package com.example.movieskmm.interactors.moviedetail
 
 import com.example.movieskmm.datasource.network.MovieService
-import com.example.movieskmm.domain.model.MovieResponse
+import com.example.movieskmm.domain.model.get_movie.MovieDetailResponse
 import com.example.movieskmm.domain.util.CommonFlow
 import com.example.movieskmm.domain.util.DataState
 import com.example.movieskmm.domain.util.asCommonFlow
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class GetMoviesUseCase(private val movieService: MovieService){
+class GetMoviesDetailUseCase (private val movieService: MovieService){
 
 
-    fun execute(page : Int) : CommonFlow<DataState<MovieResponse>> {
+    fun execute(movieId : Int) : CommonFlow<DataState<MovieDetailResponse>> {
 
         return flow {
 
             emit(DataState.loading())
             try {
-                val response = movieService.getNowPlayingMoviesAsync(page)
+                val response = movieService.getMovieDetailsAsync(movieId)
                 emit(DataState.data(null,response))
 
             }catch (e : Exception){
-             emit(DataState.error<MovieResponse>(message = e.message ?: " "))
+                emit(DataState.error(message = e.message ?: " "))
             }
 
         }.asCommonFlow()

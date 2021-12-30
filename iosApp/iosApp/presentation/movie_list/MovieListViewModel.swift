@@ -29,7 +29,7 @@ class MovieListViewModel : ObservableObject {
         let currentState = (self.state.copy() as! MovieListState)
         
         do {
-            try getMovieUseCase.execute().collectCommon(coroutineScope: nil, callback: { dateState in
+            try getMovieUseCase.execute(page: 1).collectCommon(coroutineScope: nil, callback: { dateState in
                 if dateState != nil{
                     let data = dateState?.data
                     
