@@ -28,38 +28,45 @@ struct MovieListScreen: View {
     }
     
     var body: some View {
-        SearchAppBar(
-            query: viewModel.state.query, onTriggerEvent: {event in
-                viewModel.onTriggerEvents(stateEvent: event)
-            }
-        )
+      
         NavigationView{
-        
+            
             ZStack{
-               
-                List{
-                    ForEach(viewModel.state.movies,id: \.self.id){movie in
-                        ZStack{
-                            MovieCard(movie: movie)
-                            NavigationLink(destination: MovieDetailScreen(movie: movie)){
-                               EmptyView()
-                            }
+                VStack{
+                    SearchAppBar(
+                        query: viewModel.state.query, onTriggerEvent: {event in
+                            viewModel.onTriggerEvents(stateEvent: event)
                         }
-                        .listStyle(PlainListStyle())
+                    )
+                    
+                    List{
+                        ForEach(viewModel.state.movies,id: \.self.id){movie in
+                            ZStack{
+                                VStack{
+                                    MovieCard(movie: movie)
+                                }
+
+                                NavigationLink(destination: MovieDetailScreen(movie: movie)){
+                                   EmptyView()
+                                }
+                            }
                             .listRowInsets(EdgeInsets())
-                      
+                            .padding(.top, 10)
+                          
+                        }
                     }
+                    .listStyle(PlainListStyle())
                 }
+                if viewModel.state.isLoading{
+                    ProgressView("Loading movies...")
+                }
+        
             }
-            if viewModel.state.isLoading{
-                ProgressView("Loading movies...")
-            }
-       
-           
 
         }
-        .navigationBarHidden(true)
-       
+       .navigationBarHidden(true)
+      
+    
       
         
     }

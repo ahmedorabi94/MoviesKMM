@@ -34,20 +34,20 @@ struct MovieCard: View {
                 .clipped()
             
             HStack(alignment: .lastTextBaseline){
+                
                 Text(movie.title)
                     .frame(alignment: .center)
-                
-                
                 Spacer()
-                Text(String(movie.vote_average))
+                
+                Text(String("Vote Average: \(movie.vote_average)"))
                     .frame(alignment: .trailing)
                     
 
             }
-            .padding(.top,4)
-            .padding(.leading,4)
-            .padding(.trailing,4)
-            .padding(.bottom,8)
+            .padding(.top,2)
+            .padding(.leading,2)
+            .padding(.trailing,2)
+            .padding(.bottom,2)
             
         }
         .background(Color.white)

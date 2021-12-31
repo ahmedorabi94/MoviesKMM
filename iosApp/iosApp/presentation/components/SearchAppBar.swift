@@ -36,11 +36,11 @@ struct SearchAppBar: View {
                     onTriggerEent(MovieListEvents.OnUpdateQuery(query : value))
             })
             }
-            .padding(.bottom,8)
+            .padding(.bottom,4)
         }
-        .padding(.top,8)
-        .padding(.leading,8)
-        .padding(.trailing,8)
+        .padding(.top,4)
+        .padding(.leading,4)
+        .padding(.trailing,4)
         .background(Color.white.opacity(0))
     }
 }
