@@ -50,7 +50,9 @@ fun AppNavigation() {
             val viewModel: MovieDetailViewModel = viewModel("MovieDetailViewModel", factory)
 
 
-            MovieDetail(MovieDetail = viewModel.movie.value)
+            MovieDetail(state = viewModel.state.value ,
+                onTriggerEvent = viewModel::onTriggerEvents,
+                )
 
 
         }
