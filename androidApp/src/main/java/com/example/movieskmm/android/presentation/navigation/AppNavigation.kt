@@ -15,7 +15,6 @@ import com.example.movieskmm.android.presentation.moviedetail.MovieDetail
 import com.example.movieskmm.android.presentation.moviedetail.MovieDetailViewModel
 import com.example.movieskmm.android.presentation.movielist.MovieList
 import com.example.movieskmm.android.presentation.movielist.MovieListViewModel
-import com.example.movieskmm.presentation.movie_list.MovieListEvents
 
 @ExperimentalMaterialApi
 @ExperimentalComposeUiApi

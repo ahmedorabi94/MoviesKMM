@@ -1,6 +1,5 @@
 package com.example.movieskmm.presentation.movie_detail
 
-import com.example.movieskmm.domain.model.Movie
 import com.example.movieskmm.domain.model.get_movie.MovieDetailResponse
 
 data class MovieDetailsState (

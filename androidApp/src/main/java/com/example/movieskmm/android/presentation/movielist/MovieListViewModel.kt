@@ -64,8 +64,6 @@ class MovieListViewModel @Inject constructor(
 
                 dataState.data?.let { movies ->
                     println("MovieListViewModel ${movies}")
-
-                    // state.value = state.value.copy(movies = movies.results)
                     appendMovies(movies.results)
                 }
 
@@ -88,8 +86,6 @@ class MovieListViewModel @Inject constructor(
 
                 dataState.data?.let { movies ->
                     println("MovieListViewModel ${movies}")
-
-                    // state.value = state.value.copy(movies = movies.results)
                     appendMovies(movies.results)
                 }
 

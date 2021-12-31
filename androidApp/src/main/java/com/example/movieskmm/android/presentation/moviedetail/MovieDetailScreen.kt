@@ -1,6 +1,5 @@
 package com.example.movieskmm.android.presentation.moviedetail
 
-import android.hardware.TriggerEvent
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ExperimentalMaterialApi
@@ -10,14 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.HiltViewModelFactory
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.movieskmm.android.presentation.components.MovieImage
-import com.example.movieskmm.android.presentation.movielist.MovieListViewModel
 import com.example.movieskmm.android.presentation.theme.AppTheme
-import com.example.movieskmm.domain.model.get_movie.MovieDetailResponse
 import com.example.movieskmm.presentation.movie_detail.MovieDetailsEvents
 import com.example.movieskmm.presentation.movie_detail.MovieDetailsState
 

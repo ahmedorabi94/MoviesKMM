@@ -1,6 +1,5 @@
 package com.example.movieskmm.android.presentation.movielist.component
 
-import android.widget.RatingBar
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card

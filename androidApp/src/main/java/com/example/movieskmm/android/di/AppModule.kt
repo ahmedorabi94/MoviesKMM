@@ -20,11 +20,5 @@ object AppModule {
         return app as BaseApp
     }
 
-//    @Singleton
-//    @Provides
-//    fun provideDateUtil(): DatetimeUtil {
-//        return DatetimeUtil()
-//    }
-
 
 }
