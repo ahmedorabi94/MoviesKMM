@@ -14,6 +14,7 @@ struct MovieListScreen: View {
     
     private let networkmodule : NetworkModule
     private let getMovieModule : GetMoviesModule
+    private let searchMovieModule : SearchMoviesModule
     
     @ObservedObject var viewModel : MovieListViewModel
     
@@ -21,15 +22,21 @@ struct MovieListScreen: View {
     init(networkmodule : NetworkModule) {
         self.networkmodule = networkmodule
         self.getMovieModule = GetMoviesModule(networkModule: networkmodule)
+        self.searchMovieModule = SearchMoviesModule(networkModule: networkmodule)
         
-        self.viewModel = MovieListViewModel(getMovieUseCase: getMovieModule.getMoviesUseCase)
+        self.viewModel = MovieListViewModel(getMovieUseCase: getMovieModule.getMoviesUseCase , searchMovieUseCase :  searchMovieModule.searchMoviesUseCase)
     }
     
     var body: some View {
-        
+        SearchAppBar(
+            query: viewModel.state.query, onTriggerEvent: {event in
+                viewModel.onTriggerEvents(stateEvent: event)
+            }
+        )
         NavigationView{
-            
+        
             ZStack{
+               
                 List{
                     ForEach(viewModel.state.movies,id: \.self.id){movie in
                         ZStack{
