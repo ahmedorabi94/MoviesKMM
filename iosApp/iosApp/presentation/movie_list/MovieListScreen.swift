@@ -46,7 +46,7 @@ struct MovieListScreen: View {
                                     MovieCard(movie: movie)
                                 }
 
-                                NavigationLink(destination: MovieDetailScreen(movie: movie)){
+                                NavigationLink(destination: MovieDetailScreen(movie: movie, networkmodule: networkmodule)){
                                    EmptyView()
                                 }
                             }
