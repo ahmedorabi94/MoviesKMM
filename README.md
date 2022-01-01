@@ -1,5 +1,10 @@
 # MoviesKMM
 
+## Kotlin Multiplatform Mobile
+
+- Architecture
+  - MVI Architecture (Model-View-Intent)
+  - Clean Architecture approach.
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/7644709/147856032-5bd196ea-2b8f-4a8b-b211-ca7d45be9cf1.png" width="250px" /> 
@@ -12,10 +17,10 @@
 ## Shared Components
     - Ktor (Network Client)
 
-## Android Specific Components
+## Android Components
     - Jetpack Compose
     - Jetpack Compose Navigation
     - Accompanist Coil
     - Hilt
-## iOS Specific Components
+## iOS Components
     - SwiftUI
