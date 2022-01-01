@@ -9,13 +9,13 @@
 </div>
 
 
-# Shared Components
-   Ktor (Network Client)
+## Shared Components
+    - Ktor (Network Client)
 
-# Android Specific Components
-   Jetpack Compose
-   Jetpack Compose Navigation
-   Accompanist Coil
-   Hilt
-# iOS Specific Components
-   SwiftUI
+## Android Specific Components
+    - Jetpack Compose
+    - Jetpack Compose Navigation
+    - Accompanist Coil
+    - Hilt
+## iOS Specific Components
+    - SwiftUI
